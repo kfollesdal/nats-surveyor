@@ -1677,7 +1677,7 @@ func (sc *StatzCollector) Collect(ch chan<- prometheus.Metric) {
 							if sc.jszFilterSet[ConsumerAckFloorLastActive] || !hasFilters {
 								metrics.newGaugeMetric(sc.descs.accJszConsumerAckFloorLastActive,
 									consumerStat.consumerAckFloorLastActive,
-									append(accLabels, streamStat.accountName,
+									append(accLabels,
 										streamStat.clusterName, raftGroup, streamStat.serverID, streamStat.serverName,
 										streamStat.streamName, streamStat.streamLeader, consumerStat.consumerName, consumerStat.consumerLeader,
 									),
@@ -1686,7 +1686,7 @@ func (sc *StatzCollector) Collect(ch chan<- prometheus.Metric) {
 							if sc.jszFilterSet[ConsumerDeliveredLastActive] || !hasFilters {
 								metrics.newGaugeMetric(sc.descs.accJszConsumerDeliveredLastActive,
 									consumerStat.consumerDeliveredLastActive,
-									append(accLabels, streamStat.accountName,
+									append(accLabels,
 										streamStat.clusterName, raftGroup, streamStat.serverID, streamStat.serverName,
 										streamStat.streamName, streamStat.streamLeader, consumerStat.consumerName, consumerStat.consumerLeader,
 									),
